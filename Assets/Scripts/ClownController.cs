@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 public class ClownController : MonoBehaviour
 {
     NavMeshAgent agent;
-    public new Camera camera;
-    public Animator animator;
+    private new Camera camera;
+    private Animator animator;
     private bool isInitialized = false;
     private bool isOver = false;
     private bool isOverScreen = false;
@@ -21,8 +21,8 @@ public class ClownController : MonoBehaviour
     void Start()
     {
         camera = Camera.main;
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        agent = this.GetComponent<NavMeshAgent>();
+        animator = this.GetComponent<Animator>();
         playerCamera = GameObject.Find("Main Camera");
         player = GameObject.Find("Capsule");
         gameOverScreen = GameObject.Find("GameOver");
@@ -40,11 +40,6 @@ public class ClownController : MonoBehaviour
     {
         if (!isOver)
         {
-            if (IsPlayerInNear(6.0f) && !isInitialized)
-            {
-                Init();
-                isInitialized = true;
-            }
 
             if (isInitialized && !appearanceSound.isPlaying && !nearSound.isPlaying && IsPlayerInNear(12.0f))
             {
@@ -71,7 +66,7 @@ public class ClownController : MonoBehaviour
                 agent.destination = camera.transform.position;
             }
 
-            if(IsPlayerInNear(2.5f))
+            if(isInitialized && IsPlayerInNear(2.5f))
             {
                 KillPlayer();
             }
@@ -85,8 +80,10 @@ public class ClownController : MonoBehaviour
         }
     }
 
-    void Init()
+    public void Init()
     {
+        Debug.Log(this);
+        isInitialized = true;
         animator.Play("Stand Up", -1, 0);
         appearanceSound.Play();
     }
@@ -120,6 +117,17 @@ public class ClownController : MonoBehaviour
         Invoke("GameOver", 4.0f);
         
 
+    }
+
+    public void Die()
+    {
+        isOver = true;
+        agent.speed = 0;
+        nearSound.Stop();
+        footStepSound.Stop();
+        appearanceSound.Stop();
+
+        animator.Play("die");
     }
 
     void GameOver()
