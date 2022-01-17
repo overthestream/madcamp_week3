@@ -7,7 +7,7 @@ public class PlayerCam : MonoBehaviour
 
     private float walkSpeed=20.0f;
 
-    private float lookSensitivity = 4.0f; 
+    private float lookSensitivity = 5.0f; 
 
     [SerializeField]
     private float cameraRotationLimit;  
@@ -66,5 +66,14 @@ public class PlayerCam : MonoBehaviour
         // Debug.Log(myRigid.rotation.eulerAngles); // 벡터
     }
 
+    public void SetWalkSpeed(float value)
+    {
+        this.walkSpeed = value;
+    }
+
+    public void SetLookSensitivity(float value)
+    {
+        this.lookSensitivity = value;
+    }
 
 }
