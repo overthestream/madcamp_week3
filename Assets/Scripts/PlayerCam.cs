@@ -187,6 +187,15 @@ public class PlayerCam : MonoBehaviour
         theCamera.transform.localPosition = new Vector3(0, applyCrouchPosY, 0);
     }
 
+    public void SetLookSensitivity(float val)
+    {
+        this.lookSensitivity = val;
+    }
+    public void SetWalkSpeed(float val)
+    {
+        this.walkSpeed = val;
+    }
+
     /*void OnCollisionEnter(Collision collision) {
         
 
