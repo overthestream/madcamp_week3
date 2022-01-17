@@ -36,6 +36,6 @@ public class Title : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("untitled");
     }
 }

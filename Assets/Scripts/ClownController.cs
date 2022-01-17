@@ -82,7 +82,6 @@ public class ClownController : MonoBehaviour
 
     public void Init()
     {
-        Debug.Log(this);
         isInitialized = true;
         animator.Play("Stand Up", -1, 0);
         appearanceSound.Play();

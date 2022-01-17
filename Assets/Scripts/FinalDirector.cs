@@ -41,6 +41,10 @@ public class FinalDirector : MonoBehaviour
         FinalClown clownController3 = GameObject.Find("Clown3").GetComponent<FinalClown>();
         FinalClown clownController4 = GameObject.Find("Clown4").GetComponent<FinalClown>();
 
+        Debug.Log(clownController1);
+        Debug.Log(clownController2);
+        Debug.Log(clownController3);
+        Debug.Log(clownController4);
         clownController1.Init();
         clownController2.Init();
         clownController3.Init();

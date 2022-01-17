@@ -1544,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6856593317507043671, guid: 0ad1de5bfcf3aa5408c5520b5d111bfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 6856593317507043671, guid: 0ad1de5bfcf3aa5408c5520b5d111bfe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1686,7 +1686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726285888186899372, guid: 50c13865a87be904d87021a826a02364, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 2726285888186899372, guid: 50c13865a87be904d87021a826a02364, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7312,7 +7312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3643601485130952412, guid: 440d35ab8ea96e24eb4e70e126c57154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3643601485130952412, guid: 440d35ab8ea96e24eb4e70e126c57154, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8232,6 +8232,7 @@ GameObject:
   - component: {fileID: 1596910633}
   - component: {fileID: 1596910632}
   - component: {fileID: 1596910630}
+  - component: {fileID: 1596910631}
   - component: {fileID: 1596910629}
   m_Layer: 0
   m_Name: Capsule
@@ -8240,20 +8241,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!136 &1596910629
-CapsuleCollider:
+--- !u!95 &1596910629
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596910628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7438a8cd4466a149ba8964653c59199, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &1596910630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8270,6 +8276,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1596910631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596910628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6f45115e878c145adad599dbc55a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 12
+  runSpeed: 15
+  crouchSpeed: 5
+  cameraRotationLimit: 45
+  theCamera: {fileID: 1733053376}
+  animator: {fileID: 1596910629}
 --- !u!136 &1596910632
 CapsuleCollider:
   m_ObjectHideFlags: 0

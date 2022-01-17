@@ -10,11 +10,14 @@ public class DoorKey : MonoBehaviour
     private BoxCollider doorcollider;
     public bool inTrigger= false;
 
-    void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player")
-        inTrigger= true;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inTrigger = true;
+            Debug.Log("Enter");
+       }
     }
-
     void OnTriggerExit(Collider other) {
         if(other.tag == "Player")
         inTrigger= false;

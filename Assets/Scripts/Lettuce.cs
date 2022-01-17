@@ -10,7 +10,7 @@ public class Lettuce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Capsule");
+        player = GameObject.Find("HandHolder");
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class Lettuce : MonoBehaviour
 
         if (isObsessed && !isOver)
         {
-            this.transform.position = player.transform.position + new Vector3(0, 0, 1);
+            this.transform.position = player.transform.position + new Vector3(-1, -1, 0);
         }
     }
 
